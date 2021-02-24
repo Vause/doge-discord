@@ -1,0 +1,18 @@
+{
+    "name": "doge-fun-bot",
+    "version": "1.0.0",
+    "description": "Discord bot for Doge shenanigans",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Ruben",
+    "license": "ISC",
+    "dependencies": {
+        "discord.js": "^11.5.1"
+    },
+    "devDependencies": {
+        "eslint": "^7.20.0",
+        "eslint-config-google": "^0.14.0"
+    }
+}
