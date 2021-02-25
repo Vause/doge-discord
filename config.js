@@ -5,4 +5,8 @@ module.exports = {
     TOKEN: '',
     PREFIX: '',
   },
+  directories: {
+    commands: './src/commands',
+    images: './src/images',
+  },
 };

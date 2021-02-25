@@ -9,11 +9,17 @@ require('./src/utils/eventHandler.js')(client);
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
+const commandDir = config.directories.commands;
+
 const _getFilesEndingInJS = (path) => {
   return fs.readdirSync(path).filter((file) => file.endsWith('.js'));
 };
 
-const _setAllCommands = (path) => {
+const _aliasesExist = (command) => {
+  return command.conf && command.conf.aliases;
+};
+
+const _setCommands = (path) => {
   const commandFiles = _getFilesEndingInJS(path);
 
 
@@ -21,15 +27,16 @@ const _setAllCommands = (path) => {
   commandFiles.forEach((file) => {
     const command = require(`${path}/${file}`);
     client.commands.set(command.help.name, command);
-
-    // For each alias in commands conf section, set aliases
-    command.conf.aliases.forEach((alias) => {
-      client.aliases.set(alias, command.help.name);
-    });
+    if (_aliasesExist(command)) {
+      // For each alias in commands conf section, set aliases
+      command.conf.aliases.forEach((alias) => {
+        client.aliases.set(alias, command.help.name);
+      });
+    }
   });
 };
 
-_setAllCommands('./src/commands');
+_setCommands(commandDir);
 
 client.on('error', (e) => {
   console.error(e.message);

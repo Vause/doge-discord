@@ -9,10 +9,12 @@
     "author": "Ruben",
     "license": "ISC",
     "dependencies": {
-        "discord.js": "^11.5.1"
+        "@discordjs/opus": "0.4.0",
+        "discord.js": "12.5.1",
+        "ffmpeg": "0.0.4"
     },
     "devDependencies": {
-        "eslint": "^7.20.0",
-        "eslint-config-google": "^0.14.0"
+        "eslint": "7.20.0",
+        "eslint-config-google": "0.14.0"
     }
 }

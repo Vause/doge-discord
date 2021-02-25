@@ -1,7 +1,7 @@
 exports.run = (message) => {
   message.channel.send('You have awoken the STRONKDOGE', {
     files: [
-      './src/images/stronk_doge.png',
+      './src/images/cmds/stronk_doge.png',
     ],
   });
 };
