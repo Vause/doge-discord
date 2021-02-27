@@ -1,6 +1,7 @@
 'use strict';
 
 const vcHelper = require('../utils/voiceChannelHelper');
+const dispatcherHandler = require('../utils/dispatcherHandler');
 
 exports.run = async (message) => {
   const audioFile = './src/audio/woo.mp3';
@@ -8,14 +9,7 @@ exports.run = async (message) => {
   if (vcHelper.botInVC(message)) return;
   const connection = await vcHelper.joinVC(message);
   const dispatch = vcHelper.playAudioFile(connection, audioFile);
-  dispatch.on('start', () => {
-    console.log(`Playing Audio ${audioFile}!`);
-  });
-  dispatch.on('finish', () => {
-    console.log('Done!');
-    vcHelper.leaveVC(message);
-  });
-  dispatch.on('error', console.error);
+  dispatcherHandler(message, dispatch, audioFile);
 };
 
 exports.conf = {
