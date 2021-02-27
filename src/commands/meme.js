@@ -11,10 +11,6 @@ exports.run = (message) => {
   sendMessage(message, msgText, `${imagePath}/${chosenFile}`);
 };
 
-exports.conf = {
-  aliases: ['healthcheck'],
-};
-
 exports.help = {
   name: 'meme',
   description: 'Sends a random meme',
