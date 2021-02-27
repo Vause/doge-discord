@@ -1,9 +1,5 @@
 'use strict';
 
-const config = require('../../config');
-
-const PREFIX = config.app.PREFIX;
-
 /**
  * Invalid message check
  *
@@ -11,7 +7,7 @@ const PREFIX = config.app.PREFIX;
  * @param {String} prefix - Prefix defined in config
  * @return {Boolean}
  */
-const _checkForInvalidCommand = (message, prefix) => {
+const _invalidCommandCheck = (message, prefix) => {
   return !message.content.startsWith(prefix) || message.author.bot;
 };
 
@@ -55,11 +51,13 @@ const _runCommand = (client, command, message, args) => {
 /**
  *
  * @param {Discord.Message} message - Incoming message to handle
+ * @param {String} prefix - prefix set for invoking commands
  */
 module.exports = (message) => {
   const client = message.client;
-  if (_checkForInvalidCommand(message, PREFIX)) return;
-  const args = _getArgs(message.content, PREFIX);
+  const prefix = client.prefix;
+  if (_invalidCommandCheck(message, prefix)) return;
+  const args = _getArgs(message.content, prefix);
   const command = _getCommand(args);
   try {
     _runCommand(client, command, message, args);

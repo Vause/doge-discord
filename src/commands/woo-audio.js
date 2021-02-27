@@ -1,20 +1,21 @@
 'use strict';
 
+const vcHelper = require('../utils/voiceChannelHelper');
 
 exports.run = async (message) => {
-  if (message.member.voice.channel) {
-    const audioFile = './src/audio/crit.mp3';
-    const conn = await message.member.voice.channel.join();
-    const dispatcher = conn.play(audioFile);
-    dispatcher.on('start', () => {
-      console.log(`Playing Audio ${audioFile}!`);
-    });
-    dispatcher.on('finish', () => {
-      console.log('Done!');
-      message.member.voice.channel.leave();
-    });
-    dispatcher.on('error', console.error);
-  }
+  const audioFile = './src/audio/woo.mp3';
+  if (!vcHelper.userInVC(message)) return;
+  if (vcHelper.botInVC(message)) return;
+  const connection = await vcHelper.joinVC(message);
+  const dispatch = vcHelper.playAudioFile(connection, audioFile);
+  dispatch.on('start', () => {
+    console.log(`Playing Audio ${audioFile}!`);
+  });
+  dispatch.on('finish', () => {
+    console.log('Done!');
+    vcHelper.leaveVC(message);
+  });
+  dispatch.on('error', console.error);
 };
 
 exports.conf = {

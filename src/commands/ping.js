@@ -1,5 +1,9 @@
+'use strict';
+
+const {sendMessage} = require('../utils/messageSender');
+
 exports.run = (message) => {
-  message.channel.send('Pong');
+  sendMessage(message, 'Pong');
 };
 
 exports.conf = {

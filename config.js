@@ -6,7 +6,10 @@ module.exports = {
     PREFIX: '',
   },
   directories: {
-    commands: './src/commands',
-    images: './src/images',
+    COMMANDS: 'commands',
+  },
+  dogeTicker: {
+    API_KEY: '',
+    API_URL: '',
   },
 };

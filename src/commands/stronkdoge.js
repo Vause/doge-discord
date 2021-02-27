@@ -1,9 +1,11 @@
+'use strict';
+
+const {sendMessage} = require('../utils/messageSender');
+
 exports.run = (message) => {
-  message.channel.send('You have awoken the STRONKDOGE', {
-    files: [
-      './src/images/cmds/stronk_doge.png',
-    ],
-  });
+  const msgText = 'You have awoken the STRONKDOGE';
+  const dogeImage = './src/images/cmds/stronk_doge.png';
+  sendMessage(message, msgText, dogeImage);
 };
 
 exports.conf = {

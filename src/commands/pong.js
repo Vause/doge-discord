@@ -1,5 +1,10 @@
+'use strict';
+
+const {sendMessage} = require('../utils/messageSender');
+
+
 exports.run = (message) => {
-  message.channel.send('Ping');
+  sendMessage(message, 'Ping');
 };
 
 exports.help = {
