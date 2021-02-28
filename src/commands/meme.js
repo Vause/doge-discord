@@ -1,7 +1,7 @@
 'use strict';
 
 const fs = require('fs');
-const {sendMessage} = require('../utils/messageSender');
+const {sendMessage} = require('../helpers/messageSender');
 
 exports.run = (message) => {
   const imagePath = './src/images/cmds/meme';

@@ -1,15 +1,14 @@
 'use strict';
 
-const {getTickerPrice} = require('../repositories/cryptoCurrencyRepository');
-const {sendMessage} = require('../utils/messageSender');
+const dataHandler = require('../handlers/dogeTickerHandler');
+const {sendMessage} = require('../helpers/messageSender');
 
 exports.run = async (message) => {
   try {
     const tickerId = 74;
-    const data = await getTickerPrice(tickerId);
-    const body = JSON.parse(data.body);
-    const ticker = body.data[tickerId].name;
-    const price = body.data[tickerId].quote.USD.price;
+    const data = await dataHandler(tickerId);
+    const ticker = data.tickerName;
+    const price = data.tickerPrice;
     const msgText = `Current price of ${ticker} is ${price}`;
     sendMessage(message, msgText);
   } catch (e) {

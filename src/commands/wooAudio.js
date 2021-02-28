@@ -1,10 +1,10 @@
 'use strict';
 
-const vcHelper = require('../utils/voiceChannelHelper');
-const dispatcherHandler = require('../utils/dispatcherHandler');
+const vcHelper = require('../helpers/voiceChannelHelper');
+const dispatcherHandler = require('../handlers/dispatcherHandler');
 
 exports.run = async (message) => {
-  const audioFile = './src/audio/kazoo-who-are-you.mp3';
+  const audioFile = './src/audio/woo.mp3';
   if (!vcHelper.userInVC(message)) return;
   if (vcHelper.botInVC(message)) return;
   const connection = await vcHelper.joinVC(message);
@@ -13,11 +13,11 @@ exports.run = async (message) => {
 };
 
 exports.conf = {
-  aliases: ['whoareyou', 'waitaminute', 'kazoowho'],
+  aliases: ['woo', 'thatswhativebeenwaitingfor', 'twibwf'],
 };
 
 exports.help = {
-  name: 'whoru-audio',
-  description: 'Do you actually belong here?',
-  usage: 'whoru-audio',
+  name: 'woo-audio',
+  description: 'This is what you have been waiting for wooooo',
+  usage: 'woo-audio',
 };

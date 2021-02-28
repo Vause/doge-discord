@@ -2,8 +2,8 @@
 
 const Discord = require('discord.js');
 const config = require('./config');
-const eventHandler = require('./src/utils/eventHandler.js');
-const {setCommandsAndAliases} = require('./src/utils/commandLoader');
+const eventHandler = require('./src/handlers/eventHandler');
+const {setCommandsAndAliases} = require('./src/helpers/commandLoader');
 const cryptoCurrRepo = require('./src/repositories/cryptoCurrencyRepository');
 
 const prefix = config.app.PREFIX;

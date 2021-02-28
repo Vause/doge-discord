@@ -1,6 +1,6 @@
 'use strict';
 
-const {sendMessage} = require('../utils/messageSender');
+const {sendMessage} = require('../helpers/messageSender');
 
 exports.run = (message) => {
   sendMessage(message, 'Pong');

@@ -1,6 +1,6 @@
 'use strict';
 
-const vcHelper = require('../utils/voiceChannelHelper');
+const vcHelper = require('../helpers/voiceChannelHelper');
 
 module.exports = (message, dispatcher, audioFile) => {
   dispatcher.on('start', () => {
