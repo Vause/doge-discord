@@ -1,5 +1,3 @@
-'use strict';
-
 const vcHelper = require('../helpers/voiceChannelHelper');
 
 module.exports = (message, dispatcher, audioFile) => {

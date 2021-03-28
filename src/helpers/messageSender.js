@@ -1,5 +1,3 @@
-'use strict';
-
 const _sendMessageWithFiles = (message, text, files) => {
   files = (files instanceof Array) ? files : [files];
   message.channel.send(text, {

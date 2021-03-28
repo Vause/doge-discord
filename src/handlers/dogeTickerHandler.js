@@ -1,5 +1,3 @@
-'use strict';
-
 const {getTickerPrice} = require('../repositories/cryptoCurrencyRepository');
 
 module.exports = async (tickerId) => {

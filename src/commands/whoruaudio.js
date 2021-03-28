@@ -1,5 +1,3 @@
-'use strict';
-
 const vcHelper = require('../helpers/voiceChannelHelper');
 const dispatcherHandler = require('../handlers/dispatcherHandler');
 

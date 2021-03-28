@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * Invalid message check
  *

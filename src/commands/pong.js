@@ -1,5 +1,3 @@
-'use strict';
-
 const {sendMessage} = require('../helpers/messageSender');
 
 

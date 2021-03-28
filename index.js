@@ -1,10 +1,9 @@
-'use strict';
-
 const Discord = require('discord.js');
 const config = require('./config');
 const eventHandler = require('./src/handlers/eventHandler');
 const {setCommandsAndAliases} = require('./src/helpers/commandLoader');
 const cryptoCurrRepo = require('./src/repositories/cryptoCurrencyRepository');
+const quoteRepo = require('./src/repositories/quoteRepository');
 
 const prefix = config.app.PREFIX;
 const commandDir = config.directories.COMMANDS;
@@ -21,6 +20,11 @@ setCommandsAndAliases(client, commandDir);
 cryptoCurrRepo.initialize(
     config.dogeTicker.API_KEY,
     config.dogeTicker.API_URL,
+);
+
+quoteRepo.initialize(
+    config.quote.KANYE_API_URL,
+    config.quote.TSWIFT_API_URL,
 );
 
 client.on('error', (e) => {

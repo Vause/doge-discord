@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  *
  * @param {Discord.client} client - Discord client connection

@@ -1,5 +1,3 @@
-'use strict';
-
 const _botInVCHelper = (msg) => {
   return msg.guild.me.voice.channel;
 };
