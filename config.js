@@ -1,15 +1,17 @@
-'use strict';
-
 module.exports = {
   app: {
     TOKEN: '',
-    PREFIX: '',
+    PREFIX: '!',
   },
   directories: {
     COMMANDS: 'commands',
   },
   dogeTicker: {
     API_KEY: '',
-    API_URL: '',
+    API_URL: 'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest',
+  },
+  quote: {
+    KANYE_API_URL: 'https://api.kanye.rest/?format=json',
+    TSWIFT_API_URL: 'https://api.taylor.rest',
   },
 };
