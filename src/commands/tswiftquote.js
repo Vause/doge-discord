@@ -12,7 +12,7 @@ exports.run = async (message) => {
 };
 
 exports.conf = {
-  aliases: ['tq'],
+  aliases: ['tq', 'tswift'],
 };
 
 exports.help = {

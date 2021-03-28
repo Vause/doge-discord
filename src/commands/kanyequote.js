@@ -12,7 +12,7 @@ exports.run = async (message) => {
 };
 
 exports.conf = {
-  aliases: ['kq'],
+  aliases: ['kq', 'kanye'],
 };
 
 exports.help = {

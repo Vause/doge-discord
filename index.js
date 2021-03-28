@@ -3,7 +3,9 @@ const config = require('./config');
 const eventHandler = require('./src/handlers/eventHandler');
 const {setCommandsAndAliases} = require('./src/helpers/commandLoader');
 const cryptoCurrRepo = require('./src/repositories/cryptoCurrencyRepository');
-const quoteRepo = require('./src/repositories/quoteRepository');
+const kanyeQuoteRepo = require('./src/repositories/kanyeQuoteRepository');
+const tswiftQuoteRepo = require('./src/repositories/tswiftQuoteRepository');
+
 
 const prefix = config.app.PREFIX;
 const commandDir = config.directories.COMMANDS;
@@ -22,8 +24,11 @@ cryptoCurrRepo.initialize(
     config.dogeTicker.API_URL,
 );
 
-quoteRepo.initialize(
+kanyeQuoteRepo.initialize(
     config.quote.KANYE_API_URL,
+);
+
+tswiftQuoteRepo.initialize(
     config.quote.TSWIFT_API_URL,
 );
 

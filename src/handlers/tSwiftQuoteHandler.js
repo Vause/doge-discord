@@ -1,8 +1,8 @@
-const {getTSwift} = require('../repositories/quoteRepository');
+const {get} = require('../repositories/tswiftQuoteRepository');
 
 module.exports = async () => {
   try {
-    const data = await getTSwift();
+    const data = await get();
     const body = JSON.parse(data.body);
     const quote = body.quote;
     return {
