@@ -1,17 +1,13 @@
 'use strict';
 
-const fs = require('fs');
-
-const _getFilesEndingInJS = (path) => {
-  return fs.readdirSync(path).filter((file) => file.endsWith('.js'));
-};
+const {getFilesEndingInJS} = require('../utils/fsHelper');
 
 const _aliasesExist = (command) => {
   return command.conf && command.conf.aliases;
 };
 
 const setCommandsAndAliases = (client, path) => {
-  const commandFiles = _getFilesEndingInJS(`./src/${path}`);
+  const commandFiles = getFilesEndingInJS(`./src/${path}`);
 
 
   // For each file in commands, set commands
