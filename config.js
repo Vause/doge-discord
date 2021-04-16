@@ -14,4 +14,8 @@ module.exports = {
     KANYE_API_URL: 'https://api.kanye.rest/?format=json',
     TSWIFT_API_URL: 'https://api.taylor.rest',
   },
+  weather: {
+    API_URL: 'http://api.weatherstack.com',
+    API_KEY: '',
+  },
 };

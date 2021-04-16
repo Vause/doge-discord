@@ -3,6 +3,7 @@ const config = require('./config');
 const eventHandler = require('./src/handlers/eventHandler');
 const {setCommandsAndAliases} = require('./src/helpers/commandLoader');
 const cryptoCurrRepo = require('./src/repositories/cryptoCurrencyRepository');
+const weatherRepo = require('./src/repositories/weatherRepository');
 const kanyeQuoteRepo = require('./src/repositories/kanyeQuoteRepository');
 const tswiftQuoteRepo = require('./src/repositories/tswiftQuoteRepository');
 
@@ -22,6 +23,11 @@ setCommandsAndAliases(client, commandDir);
 cryptoCurrRepo.initialize(
     config.dogeTicker.API_KEY,
     config.dogeTicker.API_URL,
+);
+
+weatherRepo.initialize(
+    config.weather.API_KEY,
+    config.weather.API_URL,
 );
 
 kanyeQuoteRepo.initialize(
