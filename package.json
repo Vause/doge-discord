@@ -13,6 +13,7 @@
         "discord.js": "12.5.1",
         "ffmpeg": "0.0.4",
         "got": "11.8.2",
+        "lodash": "^4.17.21",
         "pusher-js": "7.0.3"
     },
     "devDependencies": {
